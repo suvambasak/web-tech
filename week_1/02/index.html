@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time-Table</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+        }
+
+        table {
+            border: groove;
+        }
+
+        table th {
+            border-bottom: groove;
+            border-right: groove;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+
+        .week {
+            border-right: groove;
+        }
+
+        .course {
+            border-bottom: groove;
+        }
+
+        .container {
+            width: 1500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .green {
+            background-color: lightgreen;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .red {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h2>Time-Table for M-Tech IT (2021)</h2>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>9 AM - 10 AM</th>
+                    <th>10 AM - 11 AM</th>
+                    <th>11 AM - 12 PM</th>
+                    <th>12 PM - 1 PM </th>
+                    <th>2 PM - 3 PM</th>
+                    <th>3 PM - 4 PM</th>
+                    <th>4 PM - 5 PM</th>
+                </tr>
+
+                <tr>
+                    <td class="week"> <b>Monday</b> </td>
+                    <td class="course green">SysSec/Mehtre</td>
+                    <td class="course green">SysSec/Mehtre </td>
+                    <td class="course yellow">SE/DPRoy*</td>
+                    <td class="course yellow">SE/DPRoy*</td>
+                    <td class="course green">Comm.Skills</td>
+                    <td class="course green">Comm.Skills</td>
+                    <td class="course"></td>
+                </tr>
+                <tr>
+                    <td class="week"><b>Tuesday</b></td>
+                    <td class="course yellow">DC/VCV</td>
+                    <td class="course green">Nwsec/WN</td>
+                    <td class="course">IoT/NKS*SNS</td>
+                    <td class="course yellow">ITLab/NKS</td>
+                    <td class="course yellow">ITLab/NKS</td>
+                    <td class="course yellow">ITLab/NKS</td>
+                    <td class="course"></td>
+                </tr>
+                <tr>
+                    <td class="week"><b>Wednesday</b></td>
+                    <td class="course red">E6</td>
+                    <td class="course red">E6</td>
+                    <td class="course red">E5</td>
+                    <td class="course red">E5</td>
+                    <td class="course green">SELab/DPRoy*</td>
+                    <td class="course green">SELab/DPRoy*</td>
+                    <td class="course green">SELab/DPRoy*</td>
+                </tr>
+                <tr>
+                    <td class="week"><b>Thursday</b> </td>
+                    <td class="course green">Nwsec/WN </td>
+                    <td class="course green">Nwsec/WN </td>
+                    <td class="course yellow">SysSec/Mehtre* </td>
+                    <td class="course green">SE/DPRoy*</td>
+                    <td class="course yellow">Comm.Skills</td>
+                    <td class="course yellow">Comm.Skills</td>
+                    <td class="course"></td>
+                </tr>
+                <tr>
+                    <td class="week"><b>Friday</b> </td>
+                    <td class="yellow">IoT/NKS*SNS </td>
+                    <td class="yellow">IoT/NKS*SNS </td>
+                    <td class="green">DC/VCV </td>
+                    <td class="red">E6 </td>
+                    <td class="red">E5 </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
