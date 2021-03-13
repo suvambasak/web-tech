@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <!-- Style -->
+
+    <style>
+        body {
+            font-size: 20px;
+            background-color: rgb(228, 228, 228);
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        h3 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 30px;
+        }
+
+        p {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+
+
+        .container {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 4px #6b6b6b;
+            margin: 15px;
+        }
+
+        a {
+            padding: 15px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #index {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="box" id="index">
+            <a href="#one">
+                <b>Product One</b>
+            </a>
+            <a href="#two">
+                <b>Product Two</b>
+            </a>
+            <a href="#three">
+                <b>Product Three</b>
+            </a>
+        </div>
+
+        <div>
+            <div class="box" id="one">
+                <img src="product_1.jpg" alt="product one">
+                <h3>Product One</h3>
+                <p>
+                    <b>Features:</b> Microphones and controls and Noise cancelling<br>
+                    <b>Size:</b> Free Size<br>
+                    <b>price:</b> $230<br>
+                </p>
+            </div>
+
+
+            <div class="box" id="two">
+                <img src="product_2.jpg" alt="product two">
+                <h3>Product Two</h3>
+                <p>
+                    <b>Features:</b> Water resistance<br>
+                    <b>Size:</b> S M L XL<br>
+                    <b>price:</b> $430<br>
+                </p>
+            </div>
+
+
+            <div class="box" id="three">
+                <img src="product_3.jpg" alt="product three">
+                <h3>Product Three</h3>
+                <p>
+                    <b>Features:</b> Grip<br>
+                    <b>Size:</b> S M L XL<br>
+                    <b>price:</b> $200<br>
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
