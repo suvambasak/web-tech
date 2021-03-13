@@ -1,0 +1,36 @@
+table{
+    width: 800px;
+    margin: auto;
+    table-layout: fixed;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table, th, td{
+    border: 1px dotted rgb(0, 0, 179);
+    border-collapse: collapse;
+    padding: 10px;
+    font-size: 23px;
+}
+
+th{
+    background-color: silver;
+}
+
+.red{
+    background-color: lightcoral;
+}
+
+.yel{
+    background-color: lightgoldenrodyellow;
+}
+
+.blu{
+    background-color: lightblue;
+}
+
+.grn{
+    background-color: lightgreen;
+}

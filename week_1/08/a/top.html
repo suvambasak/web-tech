@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body {
+            background-color: gray;
+        }
+
+        .box {
+            background-color: white;
+        } */
+
+        .container {
+            display: grid;
+            grid-template-columns: auto auto auto auto auto;
+            grid-template-rows: 170px;
+            grid-gap: 10px;
+        }
+
+        .logo {
+            grid-column: 1;
+            grid-row: 1;
+            text-align: center;
+        }
+
+        .info {
+            grid-column: 2/6;
+            grid-row: 1;
+            text-align: center;
+            margin-top: 10px;
+            margin-left: 200px;
+            padding: 5px;
+        }
+
+        h1 {
+            color: rgb(0, 0, 146);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 40px;
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Logo of the College -->
+        <div class="logo">
+            <img src="logo.png" alt="logo" width="170px" height="170px">
+        </div>
+
+        <!-- Information of College -->
+        <div>
+            <div class="info">
+                <h1>University of Engineering</h1>
+                <p>
+                <h3>Autonomous by the University</h3>
+                <address>Barrackpore - Kalyani Expy, Phase III, Block A, Kalyani, West Bengal 741235</address>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
