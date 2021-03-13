@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame Format B</title>
+
+    <!-- Style for grid layout -->
+
+    <style>
+        body {
+            background-color: gray;
+        }
+
+        .box {
+            background-color: white;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: 230px 230px 230px 230px;
+            grid-gap: 10px;
+        }
+
+        .section1 {
+            grid-column: 1;
+            grid-row: 1/5;
+        }
+
+        .section2 {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .section3 {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        .section4 {
+            grid-column: 2;
+            grid-row: 3;
+        }
+
+        .section5 {
+            grid-column: 2;
+            grid-row: 4;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Container to hold whole grid layout -->
+
+    <div class="container">
+
+        <!-- Left side - big box -->
+        <div class="section1 box"></div>
+
+        <!-- Right size - row 1,2,3,4 -->
+        <div class="section2 box"></div>
+        <div class="section3 box"></div>
+        <div class="section4 box"></div>
+        <div class="section5 box"></div>
+
+    </div>
+
+</body>
+
+</html>
