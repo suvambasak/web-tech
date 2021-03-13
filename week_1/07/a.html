@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Style -->
+
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 30px;
+            color: rgb(63, 63, 63);
+        }
+
+        .outer {
+            width: 1050px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 50px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 500px 500px;
+            grid-template-rows: 500px;
+            grid-gap: 50px;
+        }
+
+        p {
+            text-align: left;
+            font-size: 25px;
+        }
+
+        select {
+            font-size: 20px;
+        }
+
+        label {
+            font-size: 23px;
+        }
+
+        textarea {
+            font-size: 23px;
+            padding: 15px;
+        }
+
+        .section1 {
+            grid-column: 1;
+            grid-row: 1;
+            text-align: center;
+        }
+
+        .section2 {
+            grid-column: 2;
+            grid-row: 1;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body class="outer">
+
+    <!-- Outer container holding whole content in the middle of screen -->
+
+    <div class="container">
+
+        <!-- Section showing the SELECT left side of the screen -->
+
+        <div class="section1">
+            <h3>SELECT</h3>
+
+            <p>The drop down list with a list of options. From the list we can select any option. Here by default None
+                is selected.</p>
+
+            <label for="language">Select a language:</label>
+            <select name="language" id="">
+                <option value="none" selected> None</option>
+                <option value="c"> C</option>
+                <option value="java"> Java</option>
+                <option value="python"> Python</option>
+                <option value="html"> HTML</option>
+                <option value="css"> CSS</option>
+                <option value="js"> JavaScript</option>
+                <option value="cpp"> C++</option>
+                <option value="php"> PHP</option>
+                <option value="csharp"> C#</option>
+            </select>
+        </div>
+
+        <!-- Section showing TEXT AREA right side of the screen -->
+
+        <div class="section2">
+            <h3>TEXT AREA</h3>
+            <p>Text area is same as input tag. The different is, it render a big text input box. Mostly used to take
+                comments and feeback.</p>
+            <textarea name="" id="" cols="35" rows="5" placeholder="Your feeback"></textarea>
+        </div>
+    </div>
+</body>
+
+</html>
