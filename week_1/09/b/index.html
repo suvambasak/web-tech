@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Links</title>
+
+    <!-- Style -->
+
+    <style>
+        body {
+            font-size: 20px;
+            background-color: rgb(228, 228, 228);
+        }
+
+        img {
+            border-radius: 10px;
+        }
+
+        h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        b {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 23px;
+        }
+
+
+        .container {
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 4px #6b6b6b;
+            margin: 15px;
+        }
+
+        a {
+            padding: 15px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #index {
+            text-align: center;
+        }
+
+        #internal {
+            margin-top: 1000px;
+            margin-bottom: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div>
+
+            <div class="box" id="index">
+                <b>Single Link Image</b>
+                <hr>
+                <a href="external.html" target="_blank">
+                    <img src="click.jpg" alt="click image">
+                </a>
+                <hr>
+                <p>
+                    <a href="#internal">
+                        <b>Internal Link</b>
+                    </a>
+                    <a href="external.html" target="_blank">
+                        <b>External Link</b>
+                    </a>
+                </p>
+            </div>
+
+            <div class="box" id="index">
+                <b>Multiple Link Image</b>
+                <hr>
+                <img src="multi.jpg" usemap="#image_map">
+                <map name="image_map">
+                    <area href="#internal" coords="3,2,215,398" shape="rect">
+                    <area href="external.html" target="_blank" coords="385,2,599,399" shape="rect">
+                </map>
+                <hr>
+                Left door Internal & Right door External
+
+            </div>
+
+        </div>
+
+
+
+        <div class="box" id="internal">
+            <h3>You Clicked Internal Link</h3>
+        </div>
+    </div>
+</body>
+
+</html>
