@@ -1,3 +1,5 @@
+/* Style for table */
+
 table{
     width: 800px;
     margin: auto;
@@ -18,6 +20,9 @@ table, th, td{
 th{
     background-color: silver;
 }
+
+
+/* cell background */
 
 .red{
     background-color: lightcoral;

@@ -41,8 +41,13 @@
             background-color: lightcyan;
             padding: 20px;
             margin: 20px;
-            box-shadow: 5px 10px #888888;
+            box-shadow: 5px 10px #6e6e6e;
             border-radius: 10px;
+        }
+
+        /* Underline using CSS */
+        #under {
+            text-decoration: underline;
         }
     </style>
 
@@ -98,14 +103,11 @@
         <div class="box">
             <p>
             <h3>Underline (other than &lt;u&gt;&lt;/u&gt;)</h3>
-            Other than &lt;u&gt;&lt;/u&gt; we can use cite tag for underlining of some text <br>
-            <b>Example:</b> Here the word <cite>Underline</cite> is underlined with cite tag.
+            Other than &lt;u&gt;&lt;/u&gt; we can use CSS for underlining of some text <br>
+            <b>Example:</b> Here the word <span id="under">Underline</span> is underlined with CSS text-decoration.
             </p>
         </div>
-
     </div>
-
-
 </body>
 
 </html>
