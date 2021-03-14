@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email</title>
+
+    <style>
+        body {
+            background-color: darkgray;
+            font-family: sans-serif;
+        }
+
+        .container {
+            background-color: white;
+            width: 850px;
+            height: 700px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 150px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 4px #424040;
+        }
+
+        #composer {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        #heading {
+            font-size: 20px;
+            color: white;
+            padding-left: 10px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            background-color: black;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        #to {
+            font-size: 20px;
+            padding-left: 10px;
+            padding-top: 5px;
+        }
+
+        #to input {
+            font-size: 20px;
+            width: 97%;
+            border: none;
+            padding: 5px;
+        }
+
+        #subject {
+            font-size: 20px;
+            padding-left: 10px;
+        }
+
+        #subject input {
+            font-size: 20px;
+            width: 97%;
+            border: none;
+            padding: 5px;
+        }
+
+        textarea {
+            resize: none;
+            border: none;
+            width: 800px;
+            height: 470px;
+            padding: 10px;
+            margin: 5px;
+            font-size: 20px;
+        }
+
+        #send {
+            font-size: 20px;
+            background-color: rgb(63, 92, 255);
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            width: 100px;
+        }
+
+        #btn {
+            text-align: right;
+            margin-right: 10px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div id="heading">
+            Compose
+        </div>
+
+        <div id="composer">
+
+            <div id="to">
+                <input type="email" placeholder="To">
+            </div>
+            <hr>
+
+            <div id="subject">
+                <input type="text" placeholder="Subject">
+            </div>
+            <hr>
+
+            <div id="message">
+                <textarea name="message" placeholder="Message"></textarea>
+            </div>
+
+            <div id="btn">
+                <input type="submit" value="Send" id="send">
+            </div>
+
+        </div>
+
+
+
+    </div>
+</body>
+
+</html>
