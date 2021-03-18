@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Supply Chain</title>
+
+    <style>
+        .project_title {
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .project_title_outer {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .screen_head {
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+
+        .code {
+            text-align: left;
+            white-space: pre-line;
+            color: black;
+        }
+
+
+        .i1 {
+            border: 1px solid red;
+        }
+
+        .i2 {
+            border: 1px solid blue;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Title of project -->
+
+        <div class="row">
+            <div class="col project_title_outer">
+                <h1 class="project_title">Supply Chain Management using Ethereum-Blockchain</h1>
+            </div>
+        </div>
+
+        <!-- content -->
+        <div class="row">
+
+            <!-- Internal liking to topics-->
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                <p class="h3 project_title">Quick Access</p>
+                <div class="list-group">
+                    <a href="#f">
+                        <button type="button"
+                            class="list-group-item list-group-item-action"><b>Functionalities</b></button></a>
+                    <a href="#meta">
+                        <button type="button" class="list-group-item list-group-item-action"><b>Install metamask
+                                wallet</b></button></a>
+                    <a href="#server">
+                        <button type="button" class="list-group-item list-group-item-action"><b>Setup a local
+                                server</b></button></a>
+
+                    <a href="#run">
+                        <button type="button" class="list-group-item list-group-item-action"><b>Run</b></button></a>
+                    <a href="#screen">
+                        <button type="button"
+                            class="list-group-item list-group-item-action"><b>Screenshots</b></button></a>
+                </div>
+
+            </div>
+
+            <!-- deatils -->
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+
+                <!-- Functionalities -->
+                <div id="f">
+                    <p class="lead">
+                    <p class="h3">Functionalities</p>
+                    <ul class="list-unstyled">
+                        <li>The producer can register him as a producer</li>
+                        <li>After registration he can add products, the attributes of a product are
+                            <ul>
+                                <li>Product ID</li>
+                                <li>Product name</li>
+                                <li>Price</li>
+                                <li>Quantity</li>
+                            </ul>
+                        </li>
+                        <li>The producer should be able to change the price if he wants.</li>
+                        <li>Customer can view the products</li>
+                        <li>Customer can order the products (no need of sending money, only COD)</li>
+                        <li>Customer can track the product using the order ID</li>
+                        <li>The status of the order are
+                            <ul>
+                                <li>Placed</li>
+                                <li>Rejected</li>
+                                <li>Delivered</li>
+                            </ul>
+                        </li>
+                        <li>The producer has the authority to change the status of the product (when the customer places
+                            an order, the status will be “Placed”).</li>
+                    </ul>
+                    </p>
+                </div>
+                <hr>
+                <hr>
+
+
+                <!-- Install wallet -->
+                <div id="meta">
+                    <p class="lead">
+                    <p class="h3">Install metamask wallet</p>
+                    Install metamask wallet using this
+                    <a
+                        href="https://addons.mozilla.org/en-US/firefox/addon/ether-metamask/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search">Link</a>.
+                    Just collect some ether and you are good to go.
+                    </p>
+                </div>
+                <hr>
+                <hr>
+
+                <!-- local server -->
+                <div id="server">
+                    <p class="lead">
+                    <p class="h3">Setup a local server</p>
+                    Install Node.js and npm
+                    <div>
+                        <code class="code">
+                            $ sudo apt install nodejs npm
+                            $ sudo npm install http-server -g
+                        </code>
+                    </div>
+                    </p>
+                </div>
+                <hr>
+                <hr>
+
+
+                <!-- Run -->
+                <div id="run">
+                    <p class="lead">
+                    <p class="h3">Run</p>
+                    Clone the repository and start http-server. Install Node.js and npm
+                    <div>
+                        <code class="code">
+                            $ git clone https://github.com/suvambasak/supply-chain-ethereum
+                            $ cd supply-chain-ethereum/
+                            $ http-server
+                        </code>
+                    </div>
+                    </p>
+                    Goto : <a href="http://localhost:8080/">http://localhost:8080/</a>
+                </div>
+                <hr>
+                <hr>
+
+                <!-- Screenshots -->
+                <div id="screen">
+                    <p class="lead">
+                    <p class="h3">Screenshots</p>
+
+                    <p class="h5 screen_head">Register as a producer</p>
+                    <img src="img/img1.jpeg" class="img-fluid" alt="Register as a producer">
+
+                    <p class="h5 screen_head">Register as a producer</p>
+                    <img src="img/img2.png" class="img-fluid" alt="Register as a producer">
+
+                    <p class="h5 screen_head">Change price of any product</p>
+                    <img src="img/img3.png" class="img-fluid" alt="Register as a producer">
+
+                    <p class="h5 screen_head">View the products</p>
+                    <img src="img/img4.png" class="img-fluid" alt="Register as a producer">
+
+                    <p class="h5 screen_head">Order products</p>
+                    <img src="img/img5.png" class="img-fluid" alt="Register as a producer">
+
+                    <p class="h5 screen_head">Customer can track the product by order ID</p>
+                    <img src="img/img6.png" class="img-fluid" alt="Register as a producer">
+
+                    <p class="h5 screen_head">View of orders & Status change</p>
+                    <img src="img/img7.png" class="img-fluid" alt="Register as a producer">
+
+                    </p>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
