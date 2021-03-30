@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>JavaScript Document Object Example</title>
+<script language="javascript" type="text/javascript">
+
+function writeContent(content, windowObj)
+{
+       windowObj.document.write(content);
+}
+</script>
+
+</head>
+
+<body>
+<script language="javascript" type="text/javascript">
+newWindowObj = window.open ("", "MyWindow");
+</script>
+
+<form action="">
+      <input type=button value="Write to New Window" onclick="writeContent('This is new content in the new window', newWindowObj)"/>
+</form>
+</body>
+</html>

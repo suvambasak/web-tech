@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>A Simple JavaScript Function Example</title>
+<script language="JavaScript" type="text/javascript">
+function car(make, model, color)
+{
+  this.make = make;
+  this.model = model;
+  this.color = color
+  this.displayCar = displayCar;
+}
+function displayCar()
+{
+     document.writeln("Make = " + this.make)
+}
+</script>
+
+</head>
+
+<script language="JavaScript" type="text/javascript">
+myCar = new car ("Ford", "Focus", "Red");
+myCar.displayCar();
+myCar.make = "BMW";
+myCar.displayCar();
+</script>
+
+</body>
+</html>
