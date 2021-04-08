@@ -49,6 +49,7 @@
         fetch(URL).then(response => response.text()).then(data => {
             let title = document.getElementById('title');
             let content = document.getElementById('content');
+
             // Parsing XML file.
             let parser = new DOMParser();
             let xmlData = parser.parseFromString(data, "text/xml");

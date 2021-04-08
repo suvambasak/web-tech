@@ -5,69 +5,89 @@
       <title>Book title 1</title>
       <price>3000</price>
       <publish_date>10-01-2000</publish_date>
-      <description>Long text for description of Book title 1.</description>
+      <description>
+      Long text for description of Book title 1.
+      </description>
    </book>
    <book id="b2">
       <author>author 2</author>
       <title>Book title 2</title>
       <price>583</price>
       <publish_date>16-12-2000</publish_date>
-      <description>Long text for description of Book title 2.</description>
+      <description>
+      Long text for description of Book title 2.
+      </description>
    </book>
    <book id="b3">
       <author>author 3</author>
       <title>Book title 3</title>
       <price>95</price>
       <publish_date>17-11-2000</publish_date>
-      <description>Long text for description of Book title 3.</description>
+      <description>
+      Long text for description of Book title 3.
+      </description>
    </book>
    <book id="b4">
       <author>author 4</author>
       <title>Book title 4</title>
       <price>595</price>
       <publish_date>10-03-2001</publish_date>
-      <description>Long text for description of Book title 4.</description>
+      <description>
+      Long text for description of Book title 4.
+      </description>
    </book>
    <book id="b5">
       <author>author 5</author>
       <title>Book title 5</title>
       <price>599</price>
       <publish_date>10-09-2001</publish_date>
-      <description>Long text for description of Book title 5.</description>
+      <description>
+      Long text for description of Book title 5.
+      </description>
    </book>
    <book id="b6">
       <author>author 6</author>
       <title>Book title 6</title>
       <price>455</price>
       <publish_date>02-09-2000</publish_date>
-      <description>Long text for description of Book title 6.</description>
+      <description>
+      Long text for description of Book title 6.
+      </description>
    </book>
    <book id="b7">
       <author>author 7</author>
       <title>Book title 7</title>
       <price>495</price>
       <publish_date>02-11-2000</publish_date>
-      <description>Long text for description of Book title 7.</description>
+      <description>
+      Long text for description of Book title 7.
+      </description>
    </book>
    <book id="b8">
       <author>author 8</author>
       <title>Book title 8</title>
       <price>499</price>
       <publish_date>06-12-2000</publish_date>
-      <description>Long text for description of Book title 8.</description>
+      <description>
+      Long text for description of Book title 8.
+      </description>
    </book>
    <book id="b9">
       <author>author 9</author>
       <title>Book title 9</title>
       <price>695</price>
       <publish_date>02-11-2000</publish_date>
-      <description>Long text for description of Book title 9.</description>
+      <description>
+      Long text for description of Book title 9.
+      </description>
    </book>
    <book id="b10">
       <author>author 10</author>
       <title>Book title 10</title>
       <price>365</price>
       <publish_date>09-12-2000</publish_date>
-      <description>Long text for description of Book title 10.</description>
+      <description>
+      Long text for description of Book title 10.
+      </description>
    </book>
 </catalog>
