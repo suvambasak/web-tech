@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Search</title>
+
+    <!-- Style -->
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        #logo {
+            font-size: 50px;
+            padding-top: 200px;
+            padding-bottom: 50px;
+        }
+
+        #search_bar {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 20px;
+            padding-left: 25px;
+            font-size: 25px;
+            border-radius: 27px;
+            box-shadow: 3px 3px 3px #a1a1a1;
+        }
+
+        #btn_set {
+            margin-top: 45px;
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Logo: Search engine -->
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <h1 id="logo">Search Engine</h1>
+            </div>
+        </div>
+
+        <!-- Input : Search bar -->
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <input class="form-control" type="text" placeholder="Search here" id="search_bar">
+            </div>
+        </div>
+
+        <!-- Search button -->
+        <div class="row">
+            <div class="d-flex justify-content-center" id="btn_set">
+                <div class="col-md-2 col-sm-12 col-xs-12">
+                    <button type="button" class="btn btn-light btn-lg" onclick="search()">Search It</button>
+                </div>
+                <div class="col-md-2 col-sm-12 col-xs-12">
+                    <button type="button" class="btn btn-light btn-lg">Try Somthing!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Function to redirect to result page.
+        function search() {
+            // Taking the search query.
+            var searchKey = document.getElementById('search_bar').value.trim().toLowerCase();
+            // If not empty then redirect to the result page.
+            if ('' != searchKey)
+                window.location.href = 'result.html?q=' + searchKey;
+        }
+    </script>
+</body>
+
+</html>

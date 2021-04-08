@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Search results</title>
+</head>
+
+<body>
+    <div class="container" style="margin-top: 100px;">
+        <!-- Button to go back to search page -->
+        <div class="d-flex justify-content-center">
+            <a href="index.html" class="btn btn-outline-primary btn-lg">Search Engine</a>
+        </div>
+        <br><br>
+
+        <!-- Search Result -->
+        <div class="d-flex justify-content-center">
+            <div class="card w-75">
+                <div class="card-body">
+                    <!-- heading -->
+                    <h5 class="card-title" id="title"></h5>
+                    <br>
+                    <!-- content -->
+                    <p class="card-text" id="content"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // retrieve ta search query from URL.
+        let params = new URLSearchParams(window.location.search);
+        const searchKey = params.get('q');
+        // Log
+        console.log(searchKey);
+
+        // URL of the XML file.
+        const URL = "data.xml";
+        // Fetch the XML as text.
+        fetch(URL).then(response => response.text()).then(data => {
+            let title = document.getElementById('title');
+            let content = document.getElementById('content');
+            // Parsing XML file.
+            let parser = new DOMParser();
+            let xmlData = parser.parseFromString(data, "text/xml");
+            // Quering the XML with info.
+            let searchDataSets = xmlData.querySelectorAll('info');
+
+            var searchFlag = true;
+            // Loop through all the details.
+            for (let i = 0; i < searchDataSets.length; i++) {
+                let searchData = searchDataSets[i];
+                // Match
+                if (searchData.children[0].innerHTML == searchKey) {
+                    searchFlag = false;
+                    console.log(searchData.children[0].innerHTML);
+                    console.log(searchData.children[1].innerHTML);
+
+                    // Show the details.
+                    title.innerHTML = 'Result of : ' + searchData.children[0].innerHTML;
+                    content.innerHTML = searchData.children[1].innerHTML;
+                }
+            }
+
+            // Not found in XML.
+            if (searchFlag) {
+                console.log('NOT FOUND!');
+                title.innerHTML = 'Result of : ' + searchKey;
+                content.innerHTML = 'NOT FOUND!';
+            }
+        })
+    </script>
+</body>
+
+</html>
