@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>XML with JS</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Heading -->
+        <div style="margin-top: 70px;">
+            <h1 class="display-4" style="text-align: center; padding: 20px;">Reading XML with JavaScript</h1>
+        </div>
+
+        <!-- Table to show XML data -->
+        <table class="table" id="books">
+            <thead class="thead-dark">
+                <!-- Headin of the table -->
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Book Title</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Publish Date</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <!-- Body -->
+            <tbody></tbody>
+        </table>
+    </div>
+
+
+    <!-- JavaScript code -->
+    <script>
+        // URL of the XML file.
+        const URL = "books.xml";
+        // Fetch the XML as text.
+        fetch(URL).then(response => response.text()).then(data => {
+            // Table from the HTML document.
+            let table = document.getElementById('books');
+
+            // Parsing XML file.
+            let parser = new DOMParser();
+            let xmlData = parser.parseFromString(data, "text/xml");
+            // Quering the XML with book.
+            let books = xmlData.querySelectorAll('book');
+
+            // Loop through all the book details.
+            for (let i = 0; i < books.length; i++) {
+                // each book details.
+                let book = books[i];
+
+                // Log
+                console.log(i + 1);
+                console.log(book.children[0].innerHTML);
+                console.log(book.children[1].innerHTML);
+                console.log(book.children[2].innerHTML);
+                console.log(book.children[3].innerHTML);
+                console.log(book.children[4].innerHTML);
+
+                // New table row.
+                let row = `<tr>
+                    <th>${i + 1}</th>
+                    <td>${book.children[0].innerHTML}</td>
+                    <td>${book.children[1].innerHTML}</td>
+                    <td>${book.children[2].innerHTML}/-</td>
+                    <td>${book.children[3].innerHTML}</td>
+                    <td>${book.children[4].innerHTML}</td>
+                </tr>`;
+
+                // Append new row in table.
+                table.innerHTML += row;
+            }
+        })
+    </script>
+</body>
+
+</html>
