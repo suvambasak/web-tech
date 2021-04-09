@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        table,
+        thead,
+        tr,
+        tbody,
+        th,
+        td {
+            text-align: center;
+        }
+    </style>
+    <title>JOSN with JS</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Heading -->
+        <div style="margin-top: 70px;">
+            <h1 class="display-4" style="text-align: center; padding: 20px;">Reading JSON with JavaScript</h1>
+        </div>
+
+        <!-- Table to show XML data -->
+        <table class="table table-bordered" id="books">
+            <thead class="thead-dark">
+                <!-- Headin of the table -->
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Book Title</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Publish Date</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <!-- Body -->
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <!-- JavaScript code -->
+    <script>
+        // Table from the HTML document.
+        let table = document.getElementById('books');
+        // URL of the XML file.
+        const URL = "books.json";
+        // Fetch the XML as text.
+        fetch(URL).then(response => response.json()).then(jsonData => {
+            // Loop through all the book details.
+            for (let i = 0; i < jsonData.books.length; i++) {
+                // Log
+                console.log(i + 1);
+                console.log(jsonData.books[i].author);
+                console.log(jsonData.books[i].title);
+                console.log(jsonData.books[i].price);
+                console.log(jsonData.books[i].date);
+                console.log(jsonData.books[i].description);
+
+                // New table row.
+                let row = `<tr>
+                    <th>${i + 1}</th>
+                    <td>${jsonData.books[i].author}</td>
+                    <td>${jsonData.books[i].title}</td>
+                    <td>${jsonData.books[i].price}/-</td>
+                    <td>${jsonData.books[i].date}</td>
+                    <td>${jsonData.books[i].description}</td>
+                </tr>`;
+
+                // Append new row in table.
+                table.innerHTML += row;
+            }
+        })
+    </script>
+</body>
+
+</html>
