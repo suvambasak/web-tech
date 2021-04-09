@@ -1,0 +1,10 @@
+{
+    "data":[
+        {"key":"test","details":"Test Successful. Search result retrieved from XML"},
+        {"key":"c","details":"C is a general-purpose, procedural computer programming language supporting structured programming, lexical variable scope, and recursion, with a static type system. By design, C provides constructs that map efficiently to typical machine instructions. [Wikipedia]"},
+        {"key":"java","details":"Java is a class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. [Wikipedia]"},
+        {"key":"js","details":"JavaScript, often abbreviated as JS, is a programming language that conforms to the ECMAScript specification. JavaScript is high-level, often just-in-time compiled, and multi-paradigm. It has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions.[Reference Wikipedia]"},
+        {"key":"python","details":""},
+        {"key":"test","details":"Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. ... Python's simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports modules and packages, which encourages program modularity and code reuse.[Reference python.org]"}
+    ]
+}
