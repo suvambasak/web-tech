@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.0.min.js"></script>
+
+    <script>
+        const url = "https://jsonplaceholder.typicode.com/comments";
+
+        $.getJSON(url,function(data){
+            console.log(data);
+        });
+
+        $(document).ready(function(){
+            $("p").click(function(){
+                $(this).hide();
+            });
+
+            $("button").click(function(){
+                $("div").animate({right:'600px'});
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <p>Click this 1</p>
+    <p>Click this 2</p>
+    <p>Click this 3</p>
+
+
+    <button>Start Animation</button>
+
+    <div style="background-color: darkgray; height: 100px; width: 100px; position: absolute;"></div>
+</body>
+</html>
