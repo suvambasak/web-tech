@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Registration</title>
+
+    <!-- Style -->
+    <style>
+        body {
+            margin-top: 100px;
+            background-color: rgb(240, 240, 240);
+        }
+
+        h1 {
+            text-align: center;
+            margin: 50px;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+            font-size: medium;
+        }
+
+        .fail {
+            color: red;
+            font-weight: bold;
+            font-size: medium;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-5">
+                <!-- Registration from -->
+                <h1><b>Registration</b></h1>
+                <form onsubmit="return false">
+                    <div class="form-group">
+                        <label for="name"><b>Name</b></label>
+                        <input type="text" class="form-control" name="name" id="name" aria-describedby="name_help"
+                            placeholder="Your Name">
+                        <small id="name_help" class="form-text"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><b>Email</b></label>
+                        <input type="email" class="form-control" name="email" id="email" aria-describedby="email_help"
+                            placeholder="Your Email">
+                        <small id="email_help" class="form-text"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd"><b>Password</b></label>
+                        <input type="password" class="form-control" name="pwd" id="pwd" aria-describedby="pwd_help"
+                            placeholder="Your Password">
+                        <small id="pwd_help" class="form-text"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="cnf_pwd"><b>Confirm Password</b></label>
+                        <input type="password" class="form-control" name="cnf_pwd" id="cnf_pwd"
+                            aria-describedby="cnf_pwd_help" placeholder="Confirm Password">
+                        <small id="cnf_pwd_help" class="form-text"></small>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Validation with jQuery -->
+    <script>
+        $(document).ready(function () {
+
+            // on submit button click.
+            $("#submit").click(function () {
+                // Log
+                console.log("Submit clicked");
+                
+                // Retrieve the values from form.
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var password = $("#pwd").val();
+                var confirmPassword = $("#cnf_pwd").val();
+
+                // Log.
+                console.log(`Name : ${name}`);
+                console.log(`Email : ${email}`);
+                console.log(`Password : ${password}`);
+                console.log(`Confirm Password : ${confirmPassword}`);
+
+                // Regular expression for email.
+                const emailRegx = /^([a-z0-9\.-]+)@([a-z0-9-]+).([a-z]+)(.[a-z]+)?$/;
+
+                // Regular expression for password strength.
+                const alphaRegx = /[a-zA-Z]+/;
+                const numRegx = /[0-9]+/;
+                const specialRegx = /[!@#$%^&*()_+=`~]+/;
+
+                // Name validation.
+                if ("" == name) {
+                    $("#name_help").text("Please enter your name!").addClass("fail");
+                    $("#name").focus();
+                    return false;
+                } else {
+                    $("#name_help").empty();
+                }
+
+                // Email Validation.
+                if ("" == email) {
+                    $("#email_help").text("Please enter your email!").addClass("fail");
+                    $("#email").focus();
+                    return false;
+                } else if (!emailRegx.test(email)) {
+                    $("#email_help").text("Invalid email!").addClass("fail");
+                    $("#email").focus();
+                    return false;
+                } else {
+                    $("#email_help").empty();
+                }
+
+                // Password validation.
+                if ("" == password) {
+                    $("#pwd_help").text("Password cannot be empty!").addClass("fail");
+                    return false;
+                } else {
+                    $("#pwd_help").empty();
+                }
+                if ("" == confirmPassword) {
+                    $("#cnf_pwd_help").text("Comfirm your password here!").addClass("fail");
+                    return false;
+                } else {
+                    $("#pwd_help").empty();
+                }
+
+                // Matching confirm password.
+                if (password != confirmPassword) {
+                    $("#cnf_pwd").focus();
+                    $("#cnf_pwd_help").text("Not matching!").addClass("fail");
+                    return false;
+                } else {
+                    $("#cnf_pwd_help").text("Matched").removeClass("fail").addClass("success");
+                }
+
+                // Checking strength.
+                if (alphaRegx.test(password) && numRegx.test(password) && specialRegx.test(password)) {
+                    $("#pwd_help").text("Strong password!").removeClass("fail").addClass("success");
+                } else {
+                    $("#pwd").focus();
+                    $("#pwd_help").text("Weak password! User digits and special characters.").addClass("fail");
+                    return false;
+                }
+
+                // var confirmation = confirm("Are you sure?");
+                // if (confirmation) {
+                //     alert("congratulations!");
+                //     return true;
+                // } else {
+                //     return false;
+                // }
+            });
+        });
+    </script>
+</body>
+
+</html>
