@@ -1,21 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <title>Registration</title>
 
     <!-- Style -->
     <style>
         body {
-            margin-top: 100px;
+            margin-bottom: 50px;
             background-color: rgb(240, 240, 240);
         }
 
@@ -24,18 +24,32 @@
             margin: 50px;
         }
 
-        .success {
-            color: green;
-            font-weight: bold;
-            font-size: medium;
+        span {
+            height: 3px;
+            width: 3px;
+            border-radius: 10px;
         }
 
-        .fail {
-            color: red;
-            font-weight: bold;
-            font-size: medium;
+        #selectable .ui-selected {
+            background: #0275d8;
+            color: white;
         }
     </style>
+
+    <!-- jQuery -->
+    <script>
+        $(document).ready(function () {
+            $(document).tooltip();
+            $("#date").datepicker();
+            $("#selectable").selectable();
+            $("#sortable").sortable();
+            $("#sortable").disableSelection();
+            $("button").click(function () {
+                alert('Not implemented yet.');
+            });
+        });
+    </script>
+    <title>jQuery UI</title>
 </head>
 
 <body>
@@ -43,65 +57,71 @@
         <div class="row d-flex justify-content-center">
             <div class="col-5">
                 <!-- survey from -->
-                <h1><b>Survey</b></h1>
-                <form onsubmit="return false">
-
+                <h1><b>jQuery-UI Survey</b></h1>
+                <hr>
+                <form action="">
+                    <!-- Name -->
                     <div class="form-group">
-                        <label for="name"><b>General Information</b></label>
+                        <label for="name"><b>General Information <br><br>Name </b></label>
                         <input type="text" class="form-control" name="name" id="name" aria-describedby="name_help"
                             placeholder="Your Name">
-                        <!-- <small id="name_help" class="form-text"></small> -->
                     </div>
 
+                    <!-- Date picker -->
                     <div class="form-group">
                         <label for="date"><b>Date</b></label>
-                        <input type="date" class="form-control" name="date" id="date" aria-describedby="email_help"
-                            placeholder="Date">
-                        <!-- <small id="email_help" class="form-text"></small> -->
+                        <input type="text" class="form-control" name="date" id="date" aria-describedby="email_help"
+                            placeholder="Select Date">
                     </div>
 
-
+                    <!-- Selectable -->
                     <div class="form-group">
                         <label for="date"><b>Are you enrolled as an undergraduate or graduate?</b></label>
-                        <input type="text" class="form-control" name="date" id="date" aria-describedby="email_help"
-                            placeholder="Date">
-                        <!-- <small id="email_help" class="form-text"></small> -->
+                        <ul class="list-group" id="selectable">
+                            <li class="list-group-item">Undergraduate</li>
+                            <li class="list-group-item">Graduate</li>
+                        </ul>
                     </div>
 
+                    <!-- Sortable color -->
                     <div class="form-group">
                         <label for="date"><b>Rank the colors listed from yout most favourite to your least
-                                favourite:</b></label>
-                        <input type="text" class="form-control" name="date" id="date" aria-describedby="email_help"
-                            placeholder="Date">
-                        <!-- <small id="email_help" class="form-text"></small> -->
+                                favourite (drag colours to order):</b></label>
+                        <ul class="list-group" id="sortable">
+                            <li class="list-group-item">
+                                <span style="background-color: #00FF08;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                &nbsp;
+                                <a href="#" title="Green">#00FF08</a>
+                            </li>
+                            <li class="list-group-item">
+                                <span style="background-color: #FF0000;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                &nbsp;
+                                <a href="#" title="Red">#FF0000</a>
+                            </li>
+                            <li class="list-group-item">
+                                <span style="background-color: #0000FF;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                &nbsp;
+                                <a href="#" title="Blue">#0000FF</a>
+                            </li>
+                            <li class="list-group-item">
+                                <span style="background-color: #00C3FF;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                &nbsp;
+                                <a href="#" title="Sky">#00C3FF</a>
+                            </li>
+                            <li class="list-group-item">
+                                <span style="background-color: #BF55EC;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                &nbsp;
+                                <a href="#" title="Purple">#BF55EC</a>
+                            </li>
+                        </ul>
                     </div>
+                    <!-- Submit button -->
                     <button type="submit" class="btn btn-primary btn-block" id="submit">Submit</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script> -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script> -->
-
-
-    <!-- jQuery -->
-    <script>
-        $(document).ready(function () {
-            $("#submit").click(function () {
-                alert("Hello world?");
-            });
-        });
-    </script>
 </body>
 
 </html>
