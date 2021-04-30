@@ -89,6 +89,7 @@
 
                     // Show the data.
                     if (this.status === 200) {
+                        $("#url_help").empty();
                         $("#out").show();
                         $("textarea").val(this.responseText).height(500);
                     } else {
