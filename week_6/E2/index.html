@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Style -->
+    <style>
+        body {
+            margin: 50px;
+        }
+
+        button {
+            margin: 5px;
+        }
+
+        .box {
+            border: 5px solid black;
+            width: 80px;
+            height: 100px;
+            margin: 5px;
+        }
+
+        .box-round {
+            border-radius: 25px;
+        }
+
+        .box-bg {
+            background-color: rosybrown;
+        }
+
+        #box_holder {
+            margin: 50px;
+        }
+    </style>
+    <title>Toggels</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Heading -->
+        <div class="row d-flex justify-content-center">
+            <h1><b>Exercise 2: Toggles</b></h1>
+        </div>
+
+        <!-- Box contaner div -->
+        <div class="row d-flex justify-content-center" id="box_holder">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+
+        <!-- Button container div -->
+        <div class="row d-flex justify-content-center">
+            <button type="button" class="btn btn-dark btn-lg" id="tcolor">Toggle Colors</button>
+            <button type="button" class="btn btn-dark btn-lg" id="tborder">Toggle Rounded Borders</button>
+            <button type="button" class="btn btn-dark btn-lg" id="tnew">Add a New Box</button>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- jQuery -->
+    <script>
+        $(document).ready(function () {
+            // Background change
+            $("#tcolor").click(function () {
+                $("div.box").toggleClass("box-bg");
+            });
+
+            // Border round
+            $("#tborder").click(function () {
+                $("div.box").toggleClass("box-round");
+            });
+
+            // Add new box
+            $("#tnew").click(function () {
+                $("#box_holder").append('<div class="box"></div>');
+            });
+        });
+    </script>
+</body>
+
+</html>
