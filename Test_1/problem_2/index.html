@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Problem #2</title>
+
+    <!-- Style -->
+    <style>
+        body {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            background-color: rgb(240, 240, 240);
+        }
+
+        h1 {
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <h1><b>Problem #2</b></h1>
+            <!-- search input -->
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search Product" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2" id="key">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </div>
+            </div>
+
+            <!-- result show -->
+            <div class="input-group" style="margin-top: 30px;">
+                <!-- Table to show products -->
+                <table class="table table-bordered" id="result">
+                    <thead class="thead-dark">
+                        <!-- Headin of the table -->
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <!-- Body -->
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery lib-->
+    <script src="jquery-3.6.0.min.js"></script>
+
+    <!-- jQuery -->
+    <script>
+        $(document).ready(function () {
+            // base URL
+            const mainUrl = "https://www.flipkart.com/search?q=";
+            var url;
+
+            $("button").click(function () {
+                // console.log($("#key").val());
+
+                // search url
+                url = mainUrl + $("#key").val();
+                console.log(url);
+
+                // fetch the webpage
+                $.get(url, function (data, status) {
+                    console.log(status);
+                    console.log(data);
+
+                    // product name 
+                    var productName = $(data).find("a.s1Q9rs");
+                    // product price
+                    var productPrice = $(data).find("div._30jeq3");
+                    // total product fetched
+                    var total = $(data).find("a.s1Q9rs").length;
+
+                    // update the table
+                    for (let i = 0; i <= total; i++) {
+                        console.log(i);
+                        console.log(productName[i].firstChild.data);
+                        console.log(productPrice[i].lastChild.data);
+
+                        // adding new row with product details.
+                        let row = `<tr>
+                                <th>${i + 1}</th>
+                                <td>${productName[i].firstChild.data}</td>
+                                <td>${productPrice[i].lastChild.data}</td>
+                            </tr>`;
+                        $("#result").find('tbody').append(row);
+                    }
+
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
