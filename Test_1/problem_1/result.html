@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- jquery -->
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // get the search key from URL
+            let params = new URLSearchParams(window.location.search);
+            const searchKey = params.get('q');
+            url = "https://www.google.com/search?q=" + searchKey;
+
+            // Fetch the page.
+            $.get(url, function (response, status) {
+                // console.log(status);
+                console.log(response);
+
+                // select display text and URL
+                var len = $(response).find("div.yuRUbf").length;
+                var data = $(response).find("div.yuRUbf");
+
+                // update the result show table.
+                for (let i = 0; i < len; i++) {
+                    console.log(data[i].firstChild.href);
+                    console.log(data[i].innerText);
+
+                    // adding results row by row.
+                    let row = `<tr>
+                        <td>${data[i].innerText}</td>
+                        <td><a href="${data[i].firstChild.href}">${data[i].firstChild.href}</a></td>
+                    </tr>`;
+
+                    $("#result").find('tbody').append(row);
+                }
+
+            });
+        });
+    </script>
+    <!-- Style -->
+    <style>
+        body {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            background-color: rgb(240, 240, 240);
+        }
+
+        h1 {
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <!-- result show -->
+            <div class="input-group" style="margin-top: 30px;">
+                <table class="table table-bordered" id="result">
+                    <thead class="thead-dark">
+                        <!-- Headin of the table -->
+                        <tr>
+                            <th scope="col">Details</th>
+                            <th scope="col">LINK</th>
+                        </tr>
+                    </thead>
+                    <!-- Body -->
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

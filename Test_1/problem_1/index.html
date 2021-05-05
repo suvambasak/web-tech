@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Data</title>
+
+    <!-- Style -->
+    <style>
+        body {
+            margin-top: 100px;
+            background-color: rgb(240, 240, 240);
+        }
+
+        h1 {
+            text-align: center;
+            margin: 50px;
+        }
+
+        .fail {
+            color: red;
+            font-weight: bold;
+            font-size: medium;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-5">
+                <!-- Registration from -->
+                <h1><b>Form Data</b></h1>
+                <form onsubmit="return false">
+                    <div class="form-group">
+                        <label for="name"><b>Enter First Name</b></label>
+                        <input type="text" class="form-control" name="fname" id="fname" aria-describedby="fname_help"
+                            placeholder="Your First Name">
+                        <small id="fname_help" class="form-text fail"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="sname"><b>Enter Second Name</b></label>
+                        <input type="text" class="form-control" name="sname" id="sname" aria-describedby="sname_help"
+                            placeholder="Your Second Name">
+                        <small id="sname_help" class="form-text fail"></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="lname_help"><b>Enter Last Name</b></label>
+                        <input type="text" class="form-control" name="lname" id="lname" aria-describedby="lname_help"
+                            placeholder="Enter Last Name">
+                        <small id="lname_help" class="form-text fail"></small>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" id="submit"
+                        onclick="validate()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Validation with jQuery -->
+    <script>
+
+        function validate() {
+            // Retrieve the values from form.
+            var fname = document.getElementById('fname').value;
+            var sname = document.getElementById('sname').value;
+            var lname = document.getElementById('lname').value;
+
+            // REF: https://stackoverflow.com/questions/32311081/check-for-special-characters-in-string
+            const invalid = /[ 0123456789`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+            var searchString = '';
+
+            // Log.
+            console.log(`First : ${fname}`);
+            console.log(`Senond : ${sname}`);
+            console.log(`Third : ${lname}`);
+
+
+            // first name validation.
+            if ("" == fname) {
+                document.getElementById("fname_help").innerHTML = "Please enter your first name!";
+                document.getElementById("fname").focus();
+                return false;
+            } if (invalid.test(fname)) {
+                document.getElementById("fname_help").innerHTML = "Invalid";
+                document.getElementById("fname").focus();
+                return false;
+            } else {
+                document.getElementById("fname_help").innerHTML = "";
+                searchString += fname;
+            }
+
+            // second name validation.
+            if (invalid.test(sname)) {
+                document.getElementById("sname_help").innerHTML = "Invalid";
+                document.getElementById("sname").focus();
+                return false;
+            } else {
+                document.getElementById("sname_help").innerHTML = "";
+                if ("" != sname)
+                    searchString += '+' + sname;
+            }
+
+            // last name validation.
+            if (invalid.test(lname)) {
+                document.getElementById("lname_help").innerHTML = "Invalid";
+                document.getElementById("lname").focus();
+                return false;
+            } else {
+                document.getElementById("lname_help").innerHTML = "";
+                if ("" != lname)
+                    searchString += '+' + lname;
+            }
+
+            console.log(searchString);
+
+            // redirect to search page
+            window.location.href = 'search.html?q=' + searchString;
+        }
+    </script>
+</body>
+
+</html>

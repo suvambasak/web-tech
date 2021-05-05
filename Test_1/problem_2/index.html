@@ -89,6 +89,7 @@
                     var total = $(data).find("a.s1Q9rs").length;
 
                     // update the table
+                    $("#result").find("tr:gt(0)").remove();
                     for (let i = 0; i <= total; i++) {
                         console.log(i);
                         console.log(productName[i].firstChild.data);

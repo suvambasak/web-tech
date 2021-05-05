@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+    <title>Search</title>
+
+    <!-- Style -->
+    <style>
+        body {
+            margin-top: 100px;
+            background-color: rgb(240, 240, 240);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #logo {
+            font-size: 50px;
+            padding-top: 200px;
+            padding-bottom: 50px;
+        }
+
+        #search_bar {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-right: 20px;
+            padding-left: 25px;
+            font-size: 25px;
+            border-radius: 27px;
+            box-shadow: 3px 3px 3px #a1a1a1;
+        }
+
+        #btn_set {
+            margin-top: 45px;
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Logo: Search engine -->
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <h1 id="logo">Search Engine</h1>
+            </div>
+        </div>
+
+        <!-- Input : Search bar -->
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <input class="form-control" type="text" placeholder="Search here" id="search_bar">
+            </div>
+        </div>
+
+        <!-- Search button -->
+        <div class="row">
+            <div class="d-flex justify-content-center" id="btn_set">
+                <div class="col-md-2 col-sm-12 col-xs-12">
+                    <button type="button" class="btn btn-light btn-lg" id="search_g">Google Search <br> step 3 </button>
+                </div>
+                <div class="col-md-2 col-sm-12 col-xs-12">
+                    <button type="button" class="btn btn-light btn-lg" id="search_s">Google Scholar <br> step 4</button>
+                </div>
+                <div class="col-md-2 col-sm-12 col-xs-12">
+                    <button type="button" class="btn btn-light btn-lg" id="search_f">Fetch & Save <br> step 5</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        $(document).ready(function () {
+            // getting search key from URL
+            let params = new URLSearchParams(window.location.search);
+            const searchKey = params.get('q');
+            // Log
+            console.log(searchKey);
+            $("#search_bar").val(searchKey);
+
+            // search result page
+            $("#search_g").click(function () {
+                console.log("Google Search clicked");
+                window.location.href = "result.html?q=" + searchKey;
+            });
+
+            // Google Scholar page
+            $("#search_s").click(function () {
+                console.log("Google Scholar clicked");
+                window.location.href = "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=" + searchKey;
+            });
+
+            // fetch (get)
+            $("#search_f").click(function () {
+                console.log("fetch (get) clicked");
+                window.location.href = "fetchPage.html?q=" + searchKey;
+            });
+
+        });
+    </script>
+</body>
+
+</html>

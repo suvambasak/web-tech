@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="jquery-3.6.0.min.js"></script>
+    <!-- Style -->
+    <style>
+        body {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            background-color: rgb(240, 240, 240);
+        }
+
+        h1 {
+            text-align: center;
+            margin: 50px;
+        }
+
+        b {
+            margin: 30px;
+        }
+    </style>
+
+    <!-- jquery -->
+    <script>
+        $(document).ready(function () {
+            // get the search key from URL
+            var params = new URLSearchParams(window.location.search);
+            const searchKey = params.get('q');
+            // To store selected data to be downloaded
+            var fileText = "";
+            const baseUrl = "https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=";
+
+            // search key words
+            keyword = searchKey.toLowerCase().split(" ");
+            // feched data store.
+            var fetchedData;
+
+            // fetch web page step 5
+            $("#fetch").click(function () {
+                let url = baseUrl + searchKey;
+                console.log(url);
+                // fetching page
+                $.get(url, function (data, status) {
+                    console.log(status);
+                    console.log(data);
+                    fetchedData = data;
+                });
+
+            });
+
+            // select the values corresponding to the entered name
+            $("#select").click(function () {
+                if (fetchedData == undefined) {
+                    alert('Fetch data first!');
+                    return false;
+                }
+
+                // select the bold text.
+                var btext = $(fetchedData).find("b");
+                for (let i = 0; i <= btext.length; i++) {
+                    let name = btext[i].innerText.toLowerCase();
+                    // matching with keywords
+                    for (let k = 0; k < keyword.length; k++) {
+                        if (name === keyword[k]) {
+                            console.log(btext[i].parentElement.innerText);
+                            // updating string to be downloaded as file.
+                            fileText += "\n" + btext[i].parentElement.innerText;
+                            break;
+                        }
+                    }
+                }
+            });
+
+            // REF: https://www.youtube.com/watch?v=_HZdLuGL8Ho
+            // store the selected values from consol.log onto a text file
+            $("#test").click(function () {
+                // generate donwload link.
+                const blob1 = new Blob([fileText], { type: "text/plain" });
+                $("#store").attr("href", URL.createObjectURL(blob1));
+            });
+
+
+        });
+    </script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Heading -->
+        <div class="row d-flex justify-content-center">
+            <h1><b> Fetch Data from web pages (Step 5-6-7)</b></h1>
+        </div>
+        <!-- info -->
+        <div class="row d-flex justify-content-center">
+            <b>Open Console</b>
+        </div>
+        <!-- Three button from three step -->
+        <div class="row d-flex justify-content-center">
+            <!-- fetch page button -->
+            <button type="button" class="btn btn-outline-primary btn-lg" id="fetch">Fetch (Step 5)</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <!-- select the values corresponding to the entered name -->
+            <button type="button" class="btn btn-outline-primary btn-lg" id="select">Select (Step 6)</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <!-- store the selected values from consol.log onto a text file -->
+            <a id="store" download="file.txt">
+                <button type="button" class="btn btn-outline-primary btn-lg" id="test">Store (Step
+                    7)</button></a>
+        </div>
+    </div>
+
+</body>
+
+</html>
